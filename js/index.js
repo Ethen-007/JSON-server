@@ -1,9 +1,8 @@
 const container = document.querySelector(".blogs");
 
 const renderPosts = async () => {
-  let uri = "http://localhost:3000/posts";
+  let uri = "http://localhost:3000/posts?_sort=likes&_order=desc"; // post ordered according to the number of likes
   const res = await fetch(uri);
-
   const posts = await res.json();
 
   let template = "";
